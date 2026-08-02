@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>I LOVE ❤️</title>
+<style>
+body{
+    margin:0;
+    background:black;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    font-family:monospace;
+}
+pre{
+    color:#ff4d6d;
+    font-size:16px;
+    line-height:16px;
+}
+</style>
+</head>
+<body>
+
+<pre id="heart"></pre>
+
+<script>
+const text = "I LOVE ";
+let output = "";
+
+for(let y=15;y>-15;y--){
+    let line="";
+    for(let x=-30;x<30;x++){
+        let a=x*0.05;
+        let b=y*0.1;
+        let h=Math.pow(a*a+b*b-1,3)-a*a*Math.pow(b,3);
+        if(h<=0){
+            line+=text[(x-y+text.length)%text.length];
+        }else{
+            line+=" ";
+        }
+    }
+    output+=line+"\n";
+}
+
+document.getElementById("heart").textContent=output;
+</script>
+
+</body>
+</html>
