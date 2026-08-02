@@ -6,18 +6,18 @@
 <style>
 body{
     margin:0;
-    background:black;
+    background:#000;
     display:flex;
     justify-content:center;
     align-items:center;
     height:100vh;
     overflow:hidden;
-    font-family:monospace;
 }
 pre{
     color:#ff4d6d;
-    font-size:16px;
-    line-height:16px;
+    font-family:monospace;
+    font-size:12px;
+    line-height:12px;
 }
 </style>
 </head>
@@ -26,25 +26,22 @@ pre{
 <pre id="heart"></pre>
 
 <script>
+let heart = "";
 const text = "I LOVE ";
-let output = "";
 
-for(let y=15;y>-15;y--){
-    let line="";
-    for(let x=-30;x<30;x++){
-        let a=x*0.05;
-        let b=y*0.1;
-        let h=Math.pow(a*a+b*b-1,3)-a*a*Math.pow(b,3);
-        if(h<=0){
-            line+=text[(x-y+text.length)%text.length];
-        }else{
-            line+=" ";
+for (let y = 1.5; y > -1.5; y -= 0.08) {
+    for (let x = -1.5; x < 1.5; x += 0.04) {
+        let a = x*x + y*y - 1;
+        if (a*a*a - x*x*y*y*y <= 0) {
+            heart += text[(heart.length % text.length)];
+        } else {
+            heart += " ";
         }
     }
-    output+=line+"\n";
+    heart += "\n";
 }
 
-document.getElementById("heart").textContent=output;
+document.getElementById("heart").textContent = heart;
 </script>
 
 </body>
