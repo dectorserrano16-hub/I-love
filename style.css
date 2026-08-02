@@ -1,0 +1,82 @@
+body{
+    margin:0;
+    background:#000;
+    color:#ff2d55;
+    font-family:Consolas, monospace;
+    overflow:hidden;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:radial-gradient(circle,#2b0000,#000);
+    z-index:-1;
+}
+
+.container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    text-align:center;
+}
+
+h1{
+    font-size:48px;
+    color:#ff0033;
+    text-shadow:
+        0 0 10px #ff0033,
+        0 0 20px #ff0033,
+        0 0 40px #ff0033;
+    animation:glow 2s infinite alternate;
+}
+
+#heart{
+    color:#ff3355;
+    font-size:12px;
+    line-height:12px;
+    text-shadow:0 0 10px #ff0033;
+    margin:20px 0;
+}
+
+.bike{
+    color:#ff4444;
+    font-size:15px;
+    text-shadow:
+        0 0 8px red,
+        0 0 15px darkred;
+    animation:bikeMove 3s ease-in-out infinite;
+}
+
+.text{
+    margin-top:20px;
+    font-size:22px;
+    color:white;
+    letter-spacing:3px;
+    text-shadow:0 0 10px red;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:0 0 10px red;
+    }
+    to{
+        text-shadow:
+            0 0 20px red,
+            0 0 40px red,
+            0 0 70px crimson;
+    }
+}
+
+@keyframes bikeMove{
+    0%{
+        transform:translateX(-10px);
+    }
+    50%{
+        transform:translateX(10px);
+    }
+    100%{
+        transform:translateX(-10px);
+    }
+}
