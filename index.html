@@ -1,48 +1,38 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>I LOVE ❤️</title>
-<style>
-body{
-    margin:0;
-    background:#000;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    overflow:hidden;
-}
-pre{
-    color:#ff4d6d;
-    font-family:monospace;
-    font-size:12px;
-    line-height:12px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I LOVE ❤️ Biker</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<pre id="heart"></pre>
+    <div class="background"></div>
 
-<script>
-let heart = "";
-const text = "I LOVE ";
+    <div class="container">
 
-for (let y = 1.5; y > -1.5; y -= 0.08) {
-    for (let x = -1.5; x < 1.5; x += 0.04) {
-        let a = x*x + y*y - 1;
-        if (a*a*a - x*x*y*y*y <= 0) {
-            heart += text[(heart.length % text.length)];
-        } else {
-            heart += " ";
-        }
-    }
-    heart += "\n";
-}
+        <h1>I LOVE ❤️</h1>
 
-document.getElementById("heart").textContent = heart;
-</script>
+        <pre id="heart"></pre>
+
+        <div class="bike">
+<pre>
+                 __
+          __o   \_____
+         \<,_   |[] []|
+      (_)/ (_)  O----O
+</pre>
+        </div>
+
+        <p class="text">
+            Ride Hard • Love Forever
+        </p>
+
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
